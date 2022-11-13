@@ -1,1 +1,22 @@
-<h1>{{title}}</h1>
+<div class="poke-list">
+  <header class="poke-list-title">
+    <h1 class="poke-list-title__text">Pokemons</h1>
+  </header>
+  <div class="poke-list__items">
+    <app-poke-list-item-card
+      *ngFor="let poke of $pokeList | async "
+      class="poke-list-item"
+      [poke]="poke"
+      (clickOnPoke)="navigateToPokePage(poke)"
+    >
+    </app-poke-list-item-card>
+  </div>
+
+  <app-pagination
+    *ngIf="$pokeTotalCount"
+    class="poke-list__pagination"
+    [countItemsPerPage]="pageConst.limit"
+    [totalItemsCount]="$pokeTotalCount | async"
+    (loadPage)="loadPageHandler($event)"
+  ></app-pagination>
+</div>

@@ -1,0 +1,48 @@
+@import "src/styles/variables.scss";
+
+$bottom-offset: 20px;
+
+.poke-list {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $header-size - $bottom-offset;
+    background-color: $color-header-blue;
+    background-image: linear-gradient(90deg, $color-header-blue 0%, $color-header-light-blue 100%);
+    margin-bottom: $bottom-offset;
+    &__text {
+      color: $color-white;
+      font-weight: bold;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-item {
+    height: calc((100vh - #{$header-size} - #{$footer-panel-size}) / 2);
+    width: 100%;
+
+    @media screen and (min-width: $tablet-screen) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $desktop-screen) {
+      width: 25%;
+    }
+  }
+
+  &__pagination {
+    min-height: $footer-panel-size;
+
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
