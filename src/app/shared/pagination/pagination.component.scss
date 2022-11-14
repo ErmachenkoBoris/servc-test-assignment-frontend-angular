@@ -8,12 +8,10 @@
     border-radius: 50%;
     padding: 5px;
     background: $color-header-blue;
-
     border: none;
 
     font-weight: bold;
     color: $color-white;
-
     width: 36px;
     height: 36px;
 
@@ -24,10 +22,8 @@
 
     &._current {
       border: 4px solid $color-header-light-blue;
-
       width: 35px;
       height: 35px;
-
       display: flex;
       justify-content: center;
       align-items: center;
