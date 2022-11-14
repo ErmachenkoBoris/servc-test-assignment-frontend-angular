@@ -1,0 +1,40 @@
+<div *ngIf="_totalItemsCount" class="pagination">
+  <button
+    class="pagination__button"
+    [disabled]="getNotIsPossibleToMove(-1)"
+    (click)="goToPage(1, 1 - paginationButtonArray[0])"
+  >
+    <<
+  </button>
+  <button
+    class="pagination__button"
+    [disabled]="getNotIsPossibleToMove(-1)"
+    (click)="goToPage(currentPage - 1, -1)"
+  >
+    <
+  </button>
+
+  <button
+    class="pagination__button"
+    *ngFor="let page of paginationButtonArray"
+    [ngClass]="{ _current: getIfCurrentPage(page) }"
+    (click)="goToPage(page)"
+  >
+    {{ page }}
+  </button>
+
+  <button
+    class="pagination__button"
+    [disabled]="getNotIsPossibleToMove(1, paginationButtonArray.length - 1)"
+    (click)="goToPage(currentPage + 1, 1)"
+  >
+    >
+  </button>
+  <button
+    class="pagination__button"
+    [disabled]="getNotIsPossibleToMove(1, paginationButtonArray.length - 1)"
+    (click)="goToPage(totalPageCount, getOffsetForLatest())"
+  >
+    >>
+  </button>
+</div>

@@ -1,0 +1,45 @@
+@import 'src/styles/variables.scss';
+
+.poke-list-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+
+  &__img {
+    height: 75%;
+  }
+
+  &__title {
+    color: $color-header-blue;
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+}
+
+@keyframes imgMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.poke-list-item-card:hover .poke-list-item-card__img {
+  animation-name: imgMove;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+}

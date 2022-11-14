@@ -1,0 +1,22 @@
+<div *ngIf="{ value: $pokeItem | async } as poke" class="poke-item">
+  <header class="poke-item-header">
+    <img class="poke-item-header__image" (click)="goToHome()" />
+    <h1 class="poke-item-header__title">{{ poke?.value?.name }}</h1>
+  </header>
+  <main class="poke-item-info">
+    <img
+      [src]="poke?.value?.imageSrc"
+      alt="poke img"
+      class="poke-item-info__image"
+    />
+    <section class="poke-item-info-stats">
+      <h2 class="poke-item-info-stats__title">stats</h2>
+      <app-poke-stats-item
+        *ngFor="let state of poke?.value?.stats"
+        [stat]="state"
+        class="poke-item-info-stats__item"
+      >
+      </app-poke-stats-item>
+    </section>
+  </main>
+</div>

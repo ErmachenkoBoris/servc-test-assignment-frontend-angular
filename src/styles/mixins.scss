@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin header-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $header-size - $bottom-offset;
+  background-color: $color-header-blue;
+  background-image: linear-gradient(90deg, $color-header-blue 0%, $color-header-light-blue 100%);
+  margin-bottom: $bottom-offset;
+}
+
+@mixin header-style-text {
+  color: $color-white;
+  font-weight: bold;
+}
