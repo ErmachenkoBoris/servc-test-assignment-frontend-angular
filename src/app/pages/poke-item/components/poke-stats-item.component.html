@@ -1,0 +1,14 @@
+<span class="poke-stats-item">
+  <span class="poke-stats-item__name">
+    {{ stat.stat.name }}
+  </span>
+  <span class="poke-stats-item__value">
+    {{ stat.base_stat }}
+    <span class="poke-stats-item__bar">
+      <div
+        [ngStyle]="{ width: stat.base_stat + 'px' }"
+        class="poke-stats-item__bar-value"
+      ></div>
+    </span>
+  </span>
+</span>

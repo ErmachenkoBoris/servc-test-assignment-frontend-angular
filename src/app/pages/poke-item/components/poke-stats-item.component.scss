@@ -1,0 +1,34 @@
+@import 'src/styles/variables.scss';
+
+.poke-stats-item {
+  display: flex;
+  justify-content: space-between;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-header-light-blue;
+    margin-bottom: 10px;
+  }
+
+  &__bar {
+    display: inline-block;
+    height: 10px;
+    width: 100px;
+
+    overflow: hidden;
+  }
+
+  &__value {
+    margin-left: 16px;
+  }
+
+  &__bar-value {
+    height: 10px;
+    background: $color-header-light-blue;
+  }
+}

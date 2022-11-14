@@ -1,4 +1,4 @@
-<div class="pagination">
+<div *ngIf="_totalItemsCount" class="pagination">
   <button
     class="pagination__button"
     [disabled]="getNotIsPossibleToMove(-1)"

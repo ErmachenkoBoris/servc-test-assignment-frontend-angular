@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { lastValueFrom, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { PokeFullInfo } from './inrefaces/poke-full-info';
 import { ApiLoadPokes } from './inrefaces/api/api-load-pokes';
 
 @Injectable({
@@ -30,9 +31,9 @@ export class ApiService {
    *
    * @url https://pokeapi.co/docs/v2#pokemon
    */
-  getOne(id: number | string) {
-    return lastValueFrom(
-      this.http.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  getOne(id: number | string): Observable<PokeFullInfo> {
+    return this.http.get<PokeFullInfo>(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
     );
   }
 }

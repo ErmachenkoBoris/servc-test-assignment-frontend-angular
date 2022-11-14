@@ -57,6 +57,7 @@ export class PaginationComponent implements OnInit {
       this.paginationButtonCount,
       this.totalPageCount
     );
+    this.paginationButtonArray = [];
 
     for (let i = 1; i < maxButtons + 1; i++) {
       this.paginationButtonArray.push(i);

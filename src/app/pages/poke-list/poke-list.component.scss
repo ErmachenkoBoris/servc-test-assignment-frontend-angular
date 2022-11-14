@@ -1,4 +1,5 @@
 @import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
 
 $bottom-offset: 20px;
 
@@ -8,16 +9,10 @@ $bottom-offset: 20px;
   display: flex;
   flex-direction: column;
   &-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: $header-size - $bottom-offset;
-    background-color: $color-header-blue;
-    background-image: linear-gradient(90deg, $color-header-blue 0%, $color-header-light-blue 100%);
-    margin-bottom: $bottom-offset;
+    @include header-style();
+
     &__text {
-      color: $color-white;
-      font-weight: bold;
+      @include header-style-text();
     }
   }
   &__items {

@@ -1,5 +1,12 @@
-<div class="poke-list-item-card">
-      <img class="poke-list-item-card__img" [src]=poke.imageSrc>
-      <h2 class="poke-list-item-card__title" (click)="clickOnPokeHandler()">
-        <a class="poke-list-item-card__button" >{{poke.name}}</a></h2>
+<div class="poke-list-item-card" (click)="clickOnPokeHandler()">
+  <img
+    class="poke-list-item-card__img poke-list-item-card-block"
+    [src]="poke.imageSrc"
+    alt="poke image"
+  />
+  <h2
+    class="poke-list-item-card__title poke-list-item-card-block"
+  >
+    <a class="poke-list-item-card__button">{{ poke.name }}</a>
+  </h2>
 </div>

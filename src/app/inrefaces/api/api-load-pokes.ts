@@ -1,6 +1,6 @@
-import {Poke} from "../poke";
+import { Poke } from '../poke';
 
 export interface ApiLoadPokes {
-  count: number,
-  results: Poke[],
+  count: number;
+  results: Poke[];
 }

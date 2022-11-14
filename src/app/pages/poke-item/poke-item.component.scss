@@ -1,0 +1,44 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+$bottom-offset: 20px;
+
+.poke-item {
+  &-header {
+    @include header-style();
+    justify-content: unset;
+    &__title {
+      @include header-style-text();
+      flex-basis: 60%;
+      text-align: center;
+    }
+
+    &__image {
+      cursor: pointer;
+      flex-basis: 20%;
+      height: $header-size * 0.3;
+      width: $header-size * 0.3;
+      background: $color-white;
+      -webkit-mask: url('/assets/icons/home-svgrepo-com.svg') no-repeat center;
+      mask: url('/assets/icons/home-svgrepo-com.svg') no-repeat center;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    &__image {
+      width: 35vh;
+    }
+
+    &-stats {
+      display: flex;
+      flex-direction: column;
+      &__title {
+        text-align: center;
+      }
+    }
+  }
+}

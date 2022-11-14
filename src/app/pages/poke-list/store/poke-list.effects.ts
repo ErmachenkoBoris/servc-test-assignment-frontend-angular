@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ApiService } from '../../../api.service';
 import {
@@ -9,6 +9,7 @@ import {
   pokeListActions
 } from './poke-list.actions';
 import { Poke } from '../../../inrefaces/poke';
+import { addImageSrc } from '../../../utils/addImageSrc';
 
 @Injectable()
 export class PokeListEffects {
@@ -25,7 +26,7 @@ export class PokeListEffects {
           }),
           map((res) =>
             pokeListActions.loadPokesSuccess({
-              pokes: res.results,
+              pokes: <Poke[]>res.results,
               totalCount: res.count,
               offset: action.offset,
               limit: action.limit
@@ -42,11 +43,4 @@ export class PokeListEffects {
   );
 
   constructor(private actions$: Actions, private apiService: ApiService) {}
-}
-
-function addImageSrc(poke: Poke): Poke {
-  return {
-    ...poke,
-    imageSrc: `https://avatars.dicebear.com/api/avataaars/${poke.name}.svg`
-  };
 }
